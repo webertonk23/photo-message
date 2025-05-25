@@ -195,27 +195,27 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 100vw;
   max-width: 100vw;
   box-sizing: border-box;
-  max-height: 25vh;
-  min-height: 80px;
+  max-height: 20vh;
+  min-height: 60px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-  padding: 24px 0 18px 0;
-  font-size: 1.2em;
+  padding: 18px 0 10px 0;
+  font-size: 1.1em;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow-y: auto;
+  flex-shrink: 1;
 }
 
 .slide-message p {
   margin-bottom: 0;
-  padding: 0 24px;
+  padding: 0 16px;
   width: 100%;
   box-sizing: border-box;
   word-break: break-word;
-  font-weight: bold;
 }
 
 .audio-controls {
@@ -226,22 +226,11 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 8px 0 16px 0;
+  padding: 8px 0 12px 0;
   background: rgba(0,0,0,0.5);
-}
-
-.audio-btn {
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-  cursor: pointer;
-  padding: 0;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  flex-shrink: 0;
 }
 
 .progress-bar-container {
@@ -283,12 +272,16 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
     padding-left: 8px;
     padding-right: 8px;
   }
+  .slide-message {
+    max-height: 16vh;
+    padding: 12px 0 6px 0;
+  }
   .slide-message p {
-    padding: 0 8px;
+    padding: 0 6px;
   }
   .progress-bar-container {
-    max-width: 180px;
-    min-width: 60px;
+    max-width: 120px;
+    min-width: 50px;
   }
 }
 </style>
