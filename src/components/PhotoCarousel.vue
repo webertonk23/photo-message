@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-container" @click="goToNextSlide">
+  <div class="carousel-container">
     <h3 class="carousel-title">{{ title }}</h3>
     <Swiper
       ref="swiperRef"
@@ -9,11 +9,19 @@
       :autoplay="{ delay: 5000, disableOnInteraction: false }"
       :pagination="{ clickable: true }"
       class="carousel-swiper"
+      @swiper="onSwiper"
     >
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
         <div class="slide-image" :style="{ backgroundImage: `url(${slide.img})` }"></div>
       </SwiperSlide>
     </Swiper>
+
+    <div class="swiper-button swiper-button-prev" @click.stop="slidePrev">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="white"/></svg>
+    </div>
+    <div class="swiper-button swiper-button-next" @click.stop="slideNext">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="white"/></svg>
+    </div>
 
     <div class="message-player-box">
       <div class="slide-message">
@@ -43,7 +51,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -60,6 +68,7 @@ const isPlaying = ref(true)
 const currentTime = ref(0)
 const duration = ref(0)
 const progress = ref(0)
+const swiperInstance = ref(null)
 
 function playAudio() {
   if (audioRef.value) {
@@ -107,15 +116,27 @@ function formatTime(sec) {
   return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
 }
 
-onMounted(() => {
-  playAudio();
-});
-
 function goToNextSlide() {
   if (swiperRef.value && swiperRef.value.swiper) {
     swiperRef.value.swiper.slideNext();
     playAudio();
   }
+}
+
+function slideNext() {
+  if (swiperInstance.value) {
+    swiperInstance.value.slideNext();
+  }
+}
+
+function slidePrev() {
+  if (swiperInstance.value) {
+    swiperInstance.value.slidePrev();
+  }
+}
+
+function onSwiper(swiper) {
+  swiperInstance.value = swiper;
 }
 
 const title = "parabéns";
@@ -284,5 +305,29 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
     max-width: 160px;
     min-width: 40px;
   }
+}
+
+.swiper-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  z-index: 20;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
 }
 </style>
