@@ -135,6 +135,9 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   height: 100vh;
   overflow: hidden;
   position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+  touch-action: pan-y;
 }
 
 .carousel-title {
@@ -159,18 +162,26 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 :deep(.swiper) {
   width: 100vw;
   height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .slide-image {
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .slide-message {
   width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
   max-height: 25vh;
   min-height: 80px;
   background: rgba(0, 0, 0, 0.5);
@@ -189,6 +200,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   justify-content: center;
   text-align: center;
   z-index: 5;
+  overflow-y: auto;
 }
 
 .slide-message p {
@@ -196,6 +208,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   padding: 0 24px;
   width: 100%;
   box-sizing: border-box;
+  word-break: break-word;
 }
 
 .audio-controls {
@@ -210,6 +223,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   z-index: 10;
   pointer-events: auto;
   gap: 12px;
+  max-width: 100vw;
 }
 
 .audio-btn {
@@ -229,6 +243,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .progress-bar-container {
   width: 50vw;
   max-width: 300px;
+  min-width: 100px;
   height: 8px;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -248,12 +263,29 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   color: #fff;
   font-size: 0.95em;
   text-shadow: 0 1px 2px #000;
-  min-width: 90px;
+  min-width: 70px;
   text-align: right;
   margin-left: 8px;
 }
 
 :deep(.swiper-pagination-bullet-active) {
   background: #fff;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+  .carousel-title,
+  .slide-message {
+    font-size: 1em;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .slide-message p {
+    padding: 0 8px;
+  }
+  .progress-bar-container {
+    max-width: 180px;
+    min-width: 60px;
+  }
 }
 </style>
