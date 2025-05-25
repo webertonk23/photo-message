@@ -195,19 +195,19 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 100vw;
   max-width: 100vw;
   box-sizing: border-box;
-  max-height: 20vh;
-  min-height: 60px;
+  max-height: 22vh;
+  min-height: 50px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-  padding: 18px 0 10px 0;
+  padding: 14px 0 8px 0;
   font-size: 1.1em;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow-y: auto;
-  flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .slide-message p {
@@ -225,8 +225,8 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 8px 0 12px 0;
+  gap: 10px;
+  padding: 6px 0 10px 0;
   background: rgba(0,0,0,0.5);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
@@ -235,13 +235,13 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 
 .progress-bar-container {
   width: 50vw;
-  max-width: 300px;
-  min-width: 100px;
-  height: 8px;
+  max-width: 240px;
+  min-width: 80px;
+  height: 6px;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   overflow: hidden;
-  margin: 0 8px;
+  margin: 0 6px;
   flex: 1;
 }
 
@@ -254,11 +254,11 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 
 .audio-time {
   color: #fff;
-  font-size: 0.95em;
+  font-size: 0.85em;
   text-shadow: 0 1px 2px #000;
-  min-width: 70px;
+  min-width: 60px;
   text-align: right;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 :deep(.swiper-pagination-bullet-active) {
@@ -273,15 +273,16 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
     padding-right: 8px;
   }
   .slide-message {
-    max-height: 16vh;
-    padding: 12px 0 6px 0;
+    max-height: 18vh;
+    padding: 10px 0 4px 0;
+    font-size: 1em;
   }
   .slide-message p {
-    padding: 0 6px;
+    padding: 0 12px;
   }
   .progress-bar-container {
-    max-width: 120px;
-    min-width: 50px;
+    max-width: 160px;
+    min-width: 40px;
   }
 }
 </style>
