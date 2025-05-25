@@ -15,7 +15,6 @@
       </SwiperSlide>
     </Swiper>
 
-    <!-- Mensagem e player juntos -->
     <div class="message-player-box">
       <div class="slide-message">
         <p>{{ message }}</p>
@@ -155,8 +154,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   font-weight: bold;
   text-align: center;
   z-index: 20;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
   text-transform: uppercase;
 }
 
@@ -204,8 +201,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   padding: 24px 0 18px 0;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
   font-size: 1.2em;
   display: flex;
   align-items: center;
@@ -233,8 +228,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   gap: 12px;
   padding: 8px 0 16px 0;
   background: rgba(0,0,0,0.5);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
 }
 
 .audio-btn {
