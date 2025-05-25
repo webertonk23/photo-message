@@ -15,29 +15,31 @@
       </SwiperSlide>
     </Swiper>
 
-    <div class="slide-message">
-      <p>{{ message }}</p>
-    </div>
-
-    <div class="audio-controls">
-      <button class="audio-btn" @click.stop="toggleAudio">
-        <span v-if="isPlaying">
-          <!-- Ícone de pause SVG -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="6" y="5" width="4" height="14" rx="1" fill="white"/><rect x="14" y="5" width="4" height="14" rx="1" fill="white"/></svg>
-        </span>
-        <span v-else>
-          <!-- Ícone de play SVG -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polygon points="7,5 21,12 7,19" fill="white"/></svg>
-        </span>
-      </button>
-      <div class="progress-bar-container">
-        <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+    <!-- Mensagem e player juntos -->
+    <div class="message-player-box">
+      <div class="slide-message">
+        <p>{{ message }}</p>
       </div>
-      <div class="audio-time">
-        {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
+      <div class="audio-controls">
+        <button class="audio-btn" @click.stop="toggleAudio">
+          <span v-if="isPlaying">
+            <!-- Ícone de pause SVG -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="6" y="5" width="4" height="14" rx="1" fill="white"/><rect x="14" y="5" width="4" height="14" rx="1" fill="white"/></svg>
+          </span>
+          <span v-else>
+            <!-- Ícone de play SVG -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polygon points="7,5 21,12 7,19" fill="white"/></svg>
+          </span>
+        </button>
+        <div class="progress-bar-container">
+          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+        </div>
+        <div class="audio-time">
+          {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
+        </div>
       </div>
+      <audio ref="audioRef" :src="audioSrc" loop @timeupdate="updateProgress" @loadedmetadata="updateDuration" autoplay />
     </div>
-    <audio ref="audioRef" :src="audioSrc" loop @timeupdate="updateProgress" @loadedmetadata="updateDuration" autoplay />
   </div>
 </template>
 
@@ -178,6 +180,20 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   justify-content: center;
 }
 
+.message-player-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  max-width: 100vw;
+  pointer-events: auto;
+}
+
 .slide-message {
   width: 100vw;
   max-width: 100vw;
@@ -187,19 +203,14 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-  padding: 24px 0 32px 0;
+  padding: 24px 0 18px 0;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   font-size: 1.2em;
-  position: absolute;
-  bottom: 60px;
-  left: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 5;
   overflow-y: auto;
 }
 
@@ -209,21 +220,21 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 100%;
   box-sizing: border-box;
   word-break: break-word;
+  font-weight: bold;
 }
 
 .audio-controls {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
+  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-  pointer-events: auto;
   gap: 12px;
-  max-width: 100vw;
+  padding: 8px 0 16px 0;
+  background: rgba(0,0,0,0.5);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 }
 
 .audio-btn {
@@ -272,7 +283,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   background: #fff;
 }
 
-/* Responsivo para telas menores */
 @media (max-width: 600px) {
   .carousel-title,
   .slide-message {
