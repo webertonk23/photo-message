@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /couple-photo1.jpg
+Disallow: /couple-photo2.jpg
+Disallow: /couple-photo3.jpg
+Disallow: /couple-photo4.jpg
+Disallow: /couple-photo5.jpg 
