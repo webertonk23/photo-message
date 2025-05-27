@@ -189,7 +189,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .slide-image {
   width: 100vw;
   height: 100vh;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
@@ -213,15 +213,15 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 }
 
 .slide-message {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   max-height: 22vh;
   min-height: 50px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-  padding: 14px 0 8px 0;
+  padding: 14px 16px 8px 16px;
   font-size: 1.1em;
   display: flex;
   align-items: center;
@@ -234,7 +234,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .slide-message p {
   margin-bottom: 0;
   padding: 0 16px;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
   word-break: break-word;
 }
@@ -286,27 +286,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   background: #fff;
 }
 
-@media (max-width: 600px) {
-  .carousel-title,
-  .slide-message {
-    font-size: 1em;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .slide-message {
-    max-height: 18vh;
-    padding: 10px 0 4px 0;
-    font-size: 1em;
-  }
-  .slide-message p {
-    padding: 0 12px;
-  }
-  .progress-bar-container {
-    max-width: 160px;
-    min-width: 40px;
-  }
-}
-
 .swiper-button {
   position: absolute;
   top: 50%;
@@ -330,4 +309,26 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .swiper-button-next {
   right: 10px;
 }
+
+@media (max-width: 600px) {
+  .carousel-title,
+  .slide-message {
+    font-size: 1em;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .slide-message {
+    max-height: 18vh;
+    padding: 10px 0 4px 0;
+    font-size: 1em;
+  }
+  .slide-message p {
+    padding: 0 12px;
+  }
+  .progress-bar-container {
+    max-width: 160px;
+    min-width: 40px;
+  }
+}
+
 </style>
