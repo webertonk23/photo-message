@@ -121,7 +121,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .slide-message {
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: 15;
   position: absolute;
   width: 100%;
@@ -133,7 +132,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   padding: 14px 16px 8px 16px;
-  margin: 0px 0px 30px 0px;
+  /* margin: 0px 0px 30px 0px; -- REMOVE OR SET TO 0 */
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
@@ -145,6 +144,9 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 100vw;
   max-width: 100vw;
   pointer-events: auto;
+
+  bottom: 10px; /* Sets the element 10 pixels from the bottom of the viewport */
+  margin-bottom: 0; /* Ensures no extra margin pushes it up further */
 }
 
 .slide-message p {
