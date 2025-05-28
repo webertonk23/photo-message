@@ -1,33 +1,29 @@
 <template>
   <div class="carousel-container">
     <h3 class="carousel-title">{{ title }}</h3>
-    <Swiper
-      ref="swiperRef"
-      :modules="[SwiperAutoplay, SwiperPagination]"
-      :slides-per-view="1"
-      :loop="true"
-      :autoplay="{ delay: 5000, disableOnInteraction: false }"
-      :pagination="{ clickable: true }"
-      class="carousel-swiper"
-      @swiper="onSwiper"
-    >
+    <Swiper ref="swiperRef" :modules="[SwiperAutoplay, SwiperPagination]" :slides-per-view="1" :loop="true"
+      :autoplay="{ delay: 5000, disableOnInteraction: false }" :pagination="{ clickable: true }" class="carousel-swiper"
+      @swiper="onSwiper">
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
         <div class="slide-image" :style="{ backgroundImage: `url(${slide.img})` }"></div>
       </SwiperSlide>
     </Swiper>
 
     <div class="swiper-button swiper-button-prev" @click.stop="slidePrev">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="white"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="white" />
+      </svg>
     </div>
     <div class="swiper-button swiper-button-next" @click.stop="slideNext">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="white"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="white" />
+      </svg>
     </div>
 
-    <div class="message-player-box">
-      <div class="slide-message">
-        <p>{{ message }}</p>
-      </div>
+    <div class="slide-message">
+      <p>{{ message }}</p>
     </div>
+
   </div>
 </template>
 
@@ -93,7 +89,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   right: 0;
   margin: 0;
   padding: 24px 16px 12px 16px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 1.5em;
   font-weight: bold;
@@ -122,21 +118,12 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   justify-content: center;
 }
 
-.message-player-box {
-  position: absolute;
+.slide-message {
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 15;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  max-width: 100vw;
-  pointer-events: auto;
-}
-
-.slide-message {
+  position: absolute;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -146,19 +133,22 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   color: #fff;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   padding: 14px 16px 8px 16px;
+  margin: 0px 0px 30px 0px;
   font-size: 1.1em;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: justify;
   overflow-y: auto;
   flex-grow: 1;
+  width: 100vw;
+  max-width: 100vw;
+  pointer-events: auto;
 }
 
 .slide-message p {
-  margin-bottom: 0;
-  padding: 0 16px;
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   word-break: break-word;
 }
@@ -195,19 +185,17 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   .carousel-container {
     width: 100vw;
   }
+
   .carousel-title,
   .slide-message {
     font-size: 1em;
-    padding: 25px 0px;
+    padding: 25px 10px 0px 10px;
     font-size: 1em;
   }
-  .slide-message p {
-    padding: 25px 0px 0px;
-  }
-  .progress-bar-container {
+
+  .slide-message p .progress-bar-container {
     max-width: 160px;
     min-width: 40px;
   }
 }
-
 </style>
