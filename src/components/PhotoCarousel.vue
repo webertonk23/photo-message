@@ -241,12 +241,11 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   .carousel-title,
   .slide-message {
     font-size: 1em;
-    max-height: 18vh;
-    padding: 10px 0px 4px 0;
+    padding: 15px 0px 4px 0;
     font-size: 1em;
   }
   .slide-message p {
-    padding: 75px 0px 12px 0px;
+    padding: 50px 0px 12px 0px;
   }
   .progress-bar-container {
     max-width: 160px;
