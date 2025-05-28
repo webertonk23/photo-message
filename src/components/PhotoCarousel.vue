@@ -65,9 +65,9 @@ function onSwiper(swiper) {
 const title = "parabéns";
 
 const slides = [
+  { img: '/couple-photo3.jpg' },
   { img: '/couple-photo1.jpg' },
   { img: '/couple-photo2.jpg' },
-  { img: '/couple-photo3.jpg' },
   { img: '/couple-photo4.jpg' },
 ];
 
@@ -83,6 +83,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   max-width: 100vw;
   max-height: 100vh;
   touch-action: pan-y;
+  width: 50%;
 }
 
 .carousel-title {
@@ -112,7 +113,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 .slide-image {
   width: 100vw;
   height: 100vh;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
@@ -139,7 +140,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  max-height: 22vh;
+  max-height: 25vh;
   min-height: 50px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -234,19 +235,18 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 }
 
 @media (max-width: 600px) {
+  .carousel-container {
+    width: 100vw;
+  }
   .carousel-title,
   .slide-message {
     font-size: 1em;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .slide-message {
     max-height: 18vh;
-    padding: 10px 0 4px 0;
+    padding: 10px 0px 4px 0;
     font-size: 1em;
   }
   .slide-message p {
-    padding: 0 12px;
+    padding: 75px 0px 12px 0px;
   }
   .progress-bar-container {
     max-width: 160px;
