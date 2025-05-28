@@ -27,25 +27,6 @@
       <div class="slide-message">
         <p>{{ message }}</p>
       </div>
-      <div class="audio-controls">
-        <button class="audio-btn" @click.stop="toggleAudio">
-          <span v-if="isPlaying">
-            <!-- Ícone de pause SVG -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="6" y="5" width="4" height="14" rx="1" fill="white"/><rect x="14" y="5" width="4" height="14" rx="1" fill="white"/></svg>
-          </span>
-          <span v-else>
-            <!-- Ícone de play SVG -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polygon points="7,5 21,12 7,19" fill="white"/></svg>
-          </span>
-        </button>
-        <div class="progress-bar-container">
-          <div class="progress-bar" :style="{ width: progress + '%' }"></div>
-        </div>
-        <div class="audio-time">
-          {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
-        </div>
-      </div>
-      <audio ref="audioRef" :src="audioSrc" loop @timeupdate="updateProgress" @loadedmetadata="updateDuration" autoplay />
     </div>
   </div>
 </template>
@@ -62,66 +43,8 @@ const SwiperPagination = Pagination;
 
 const swiperRef = ref(null);
 const audioRef = ref(null)
-const audioSrc = '/nosso-primeiro-beijo.mp3'
 
-const isPlaying = ref(true)
-const currentTime = ref(0)
-const duration = ref(0)
-const progress = ref(0)
 const swiperInstance = ref(null)
-
-function playAudio() {
-  if (audioRef.value) {
-    audioRef.value.play()
-    isPlaying.value = true
-  }
-}
-
-function pauseAudio() {
-  if (audioRef.value) {
-    audioRef.value.pause()
-    isPlaying.value = false
-  }
-}
-
-function toggleAudio() {
-  if (!audioRef.value) return
-  if (isPlaying.value) {
-    pauseAudio()
-  } else {
-    playAudio()
-  }
-}
-
-function updateProgress() {
-  if (audioRef.value) {
-    currentTime.value = audioRef.value.currentTime
-    duration.value = audioRef.value.duration || 0
-    progress.value = duration.value
-      ? (audioRef.value.currentTime / duration.value) * 100
-      : 0
-  }
-}
-
-function updateDuration() {
-  if (audioRef.value) {
-    duration.value = audioRef.value.duration || 0
-  }
-}
-
-function formatTime(sec) {
-  if (!sec || isNaN(sec)) return '00:00'
-  const m = Math.floor(sec / 60)
-  const s = Math.floor(sec % 60)
-  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
-}
-
-function goToNextSlide() {
-  if (swiperRef.value && swiperRef.value.swiper) {
-    swiperRef.value.swiper.slideNext();
-    playAudio();
-  }
-}
 
 function slideNext() {
   if (swiperInstance.value) {
@@ -148,7 +71,7 @@ const slides = [
   { img: '/couple-photo4.jpg' },
 ];
 
-const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. Entre risadas, provocações e olhares que dizem tudo sem precisar de palavras, a gente se entende de um jeito só nosso. Adoro como você me faz querer ficar pertinho. Que a nossa conexão continue sendo esse segredo gostoso, cheio de vontade, sorrisos, malicias e carido. 😏❤️"
+const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. Entre risadas, provocações e olhares que dizem tudo sem precisar de palavras, a gente se entende de um jeito só nosso. Adoro como você me faz querer ficar pertinho. Que a nossa conexão continue sendo esse segredo gostoso, cheio de vontade, sorrisos, malicias e carinho. 😏❤️"
 </script>
 
 <style scoped>
