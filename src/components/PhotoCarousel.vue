@@ -150,7 +150,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: justify;
   overflow-y: auto;
   flex-grow: 1;
 }
@@ -161,49 +161,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   width: 90%;
   box-sizing: border-box;
   word-break: break-word;
-}
-
-.audio-controls {
-  width: 100vw;
-  max-width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 6px 0 10px 0;
-  background: rgba(0,0,0,0.5);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
-  flex-shrink: 0;
-}
-
-.progress-bar-container {
-  width: 50vw;
-  max-width: 240px;
-  min-width: 80px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 0 6px;
-  flex: 1;
-}
-
-.progress-bar {
-  height: 100%;
-  background: #fff;
-  width: 0%;
-  transition: width 0.2s;
-}
-
-.audio-time {
-  color: #fff;
-  font-size: 0.85em;
-  text-shadow: 0 1px 2px #000;
-  min-width: 60px;
-  text-align: right;
-  margin-left: 6px;
 }
 
 :deep(.swiper-pagination-bullet-active) {
@@ -241,11 +198,11 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   .carousel-title,
   .slide-message {
     font-size: 1em;
-    padding: 15px 0px 4px 0;
+    padding: 25px 0px;
     font-size: 1em;
   }
   .slide-message p {
-    padding: 50px 0px 12px 0px;
+    padding: 25px 0px 0px;
   }
   .progress-bar-container {
     max-width: 160px;
