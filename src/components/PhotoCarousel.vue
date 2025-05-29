@@ -139,18 +139,21 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 
 .slide-message {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 5%; /* Posicionado a 5% do final da tela */
   z-index: 15;
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
   padding: 12px 15px;
   font-size: 0.95rem;
   text-align: justify;
-  max-height: 50vh;
+  max-height: 35vh; /* Altura máxima reduzida */
   overflow-y: auto;
   box-sizing: border-box;
+  margin: 0 10px;
+  border-radius: 8px;
+  width: calc(100% - 20px);
 }
 
 .slide-message p {
@@ -159,7 +162,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 }
 
 :deep(.swiper-pagination) {
-  bottom: 10px !important;
+  bottom: calc(5% + 35vh + 10px) !important; /* Acima da mensagem */
   z-index: 25;
 }
 
@@ -199,9 +202,10 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   .slide-message {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 10px 12px;
-    max-height: 45vh;
+    max-height: 30vh; /* Altura ajustada */
+    bottom: 5%; /* Mantém posição a 5% do fundo */
   }
   
   .swiper-button {
@@ -210,7 +214,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: 8px !important;
+    bottom: calc(5% + 30vh + 8px) !important;
   }
 }
 
@@ -226,9 +230,10 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   .slide-message {
-    font-size: 0.8rem;
-    max-height: 40vh;
-    padding: 8px 10px;
+    font-size: 0.85rem;
+    max-height: 35vh; /* Mais espaço para texto */
+    padding: 10px;
+    bottom: 5%;
   }
   
   .swiper-button {
@@ -237,19 +242,35 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: 5px !important;
+    bottom: calc(5% + 35vh + 5px) !important;
+  }
+  
+  /* Aumentar espaço para texto em telas muito curtas */
+  @media (max-height: 700px) {
+    .slide-message {
+      max-height: 40vh;
+      bottom: 2%;
+    }
+    :deep(.swiper-pagination) {
+      bottom: calc(2% + 40vh + 5px) !important;
+    }
   }
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
   .slide-message {
-    max-height: 35vh;
+    max-height: 50vh; /* Mais altura em modo paisagem */
     font-size: 0.8rem;
+    bottom: 5%;
   }
   
   .carousel-title {
     padding: 8px 6px;
     font-size: 1.1rem;
+  }
+  
+  :deep(.swiper-pagination) {
+    bottom: calc(5% + 50vh + 5px) !important;
   }
 }
 
@@ -272,8 +293,15 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   .slide-message {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    bottom: 20px;
+    max-height: 25vh;
+    border-radius: 8px;
+  }
+  
+  :deep(.swiper-pagination) {
+    bottom: calc(25vh + 25px) !important;
   }
 }
 
