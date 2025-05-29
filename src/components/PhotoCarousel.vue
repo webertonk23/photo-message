@@ -86,7 +86,6 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   overflow: hidden;
   position: relative;
   background: #000;
-  padding-bottom: 10px;
 }
 
 .carousel-title {
@@ -205,8 +204,8 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   .slide-message {
     font-size: 0.9rem;
     padding: 10px 12px;
-    max-height: 30vh; /* Altura ajustada */
-    bottom: 5%; /* Mantém posição a 5% do fundo */
+    max-height: 30vh;
+    bottom: 5%;
   }
   
   .swiper-button {
@@ -232,8 +231,9 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   
   .slide-message {
     font-size: 0.85rem;
-    max-height: 35vh; /* Mais espaço para texto */
+    max-height: 35vh;
     padding: 10px;
+    margin-bottom: 30px;
     bottom: 5%;
   }
   
