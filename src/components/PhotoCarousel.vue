@@ -29,7 +29,7 @@
     </div>
 
     <div class="slide-message">
-      <p>{{ message }}</p>
+      <p v-html="message"></p>
     </div>
   </div>
 </template>
@@ -69,10 +69,9 @@ const slides = [
   { img: '/couple-photo3.jpg' },
   { img: '/couple-photo1.jpg' },
   { img: '/couple-photo2.jpg' },
-  { img: '/couple-photo4.jpg' },
 ];
 
-const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. Entre risadas, provocações e olhares que dizem tudo sem precisar de palavras, a gente se entende de um jeito só nosso. Adoro como você me faz querer ficar pertinho. Que a nossa conexão continue sendo esse segredo gostoso, cheio de vontade, sorrisos, malícias e carinho. 😏❤️"
+const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. Entre risadas, provocações e olhares que dizem tudo sem precisar de palavras, a gente se entende de um jeito só nosso. Adoro como você me faz querer ficar pertinho. Que a nossa conexão continue sendo esse segredo gostoso, cheio de vontade, sorrisos, malícias e carinho.<br>😏❤️"
 </script>
 
 <style scoped>
