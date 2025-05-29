@@ -109,7 +109,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 0; /* Fix para flexbox em browsers antigos */
+  min-height: 0;
 }
 
 .carousel-swiper,
@@ -126,7 +126,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 40px 0 60px; /* Espaço para título e mensagem */
+  padding: 40px 0 60px;
   box-sizing: border-box;
 }
 
@@ -161,7 +161,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 }
 
 :deep(.swiper-pagination) {
-  bottom: 30vh !important;
+  bottom: 35px !important;
 }
 
 :deep(.swiper-pagination-bullet-active) {
@@ -206,11 +206,16 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: 25vh !important;
+    bottom: 30px !important;
   }
 }
 
 @media (max-width: 480px) {
+  .carousel-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
   .carousel-title {
     font-size: 1.1rem;
   }
@@ -226,20 +231,38 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: 20vh !important;
+    bottom: 25px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-container {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slide-image {
+    max-height: 75vh;
+  }
+  
+  .slide-message {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
 
 @media (min-width: 1024px) {
   .carousel-container {
     max-width: 800px;
-    margin: 0 auto;
-    height: 90vh;
     max-height: 800px;
-  }
-  
-  .slide-image {
-    max-height: 90%;
   }
 }
 </style>
