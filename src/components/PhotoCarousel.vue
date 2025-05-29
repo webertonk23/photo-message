@@ -232,9 +232,9 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   .slide-message {
     font-size: 0.85rem;
     max-height: 35vh;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 30px;
-    bottom: 5%;
+    bottom: 10%;
   }
   
   .swiper-button {
