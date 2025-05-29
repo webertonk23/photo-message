@@ -233,7 +233,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
     font-size: 0.85rem;
     max-height: 35vh;
     padding: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     bottom: 10%;
   }
   
