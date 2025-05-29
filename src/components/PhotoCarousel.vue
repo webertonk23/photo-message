@@ -86,6 +86,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   overflow: hidden;
   position: relative;
   background: #000;
+  padding-bottom: 10px;
 }
 
 .carousel-title {
@@ -259,7 +260,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 
 @media (max-width: 768px) and (orientation: landscape) {
   .slide-message {
-    max-height: 50vh; /* Mais altura em modo paisagem */
+    max-height: 50vh;
     font-size: 0.8rem;
     bottom: 5%;
   }
