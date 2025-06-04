@@ -67,8 +67,10 @@ const title = "parabéns";
 
 const slides = [
   { img: '/couple-photo3.jpg' },
+  { img: '/couple-photo4.jpg' },
   { img: '/couple-photo1.jpg' },
   { img: '/couple-photo2.jpg' },
+  { img: '/couple-photo5.jpg' },
 ];
 
 const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. Entre risadas, provocações e olhares que dizem tudo sem precisar de palavras, a gente se entende de um jeito só nosso. Adoro como você me faz querer ficar pertinho. Que a nossa conexão continue sendo esse segredo gostoso, cheio de vontade, sorrisos, malícias e carinho.<br>😏❤️"
@@ -161,7 +163,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
 }
 
 :deep(.swiper-pagination) {
-  bottom: calc(5% + 35vh + 10px) !important; /* Acima da mensagem */
+  bottom: 10px !important;
   z-index: 25;
 }
 
@@ -213,7 +215,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: calc(5% + 30vh + 8px) !important;
+    bottom: 10px !important;
   }
 }
 
@@ -242,7 +244,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: calc(5% + 35vh + 5px) !important;
+    bottom: 10px !important;
   }
   
   /* Aumentar espaço para texto em telas muito curtas */
@@ -252,7 +254,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
       bottom: 2%;
     }
     :deep(.swiper-pagination) {
-      bottom: calc(2% + 40vh + 5px) !important;
+      bottom: 10px !important;
     }
   }
 }
@@ -270,7 +272,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: calc(5% + 50vh + 5px) !important;
+    bottom: 10px !important;
   }
 }
 
@@ -301,7 +303,7 @@ const message = "Você é aquela bagunça boa que eu adoro ter na minha vida. En
   }
   
   :deep(.swiper-pagination) {
-    bottom: calc(25vh + 25px) !important;
+    bottom: 10px !important;
   }
 }
 
